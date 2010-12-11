@@ -1,0 +1,20 @@
+[(#INCLURE{fond=debut_page})]
+
+    <div id="contenu">
+      <BOUCLE_article(ARTICLES){id_article}>
+      <div class = "detail_article">
+         <h2>#SURTITRE</h2>
+         <h1>#TITRE</h1>
+         <h2>#SOUSTITRE</h2>
+         <b>#CHAPO</b>
+	      <div id="documents_portfolio">
+	         <BOUCLE_vignette(DOCUMENTS){id_article}{extension==jpg|png|gif}>
+	            <a href="#FICHIER" class="mediabox" type="image/jpeg">[(#FICHIER|image_reduire{150,0}|image_recadre{150,100})]</a>
+	         </BOUCLE_vignette>
+	      </div>
+         <p>#TEXTE</p>
+      </div>
+      </BOUCLE_article>            
+    </div>
+
+[(#INCLURE{fond=fin_page})]

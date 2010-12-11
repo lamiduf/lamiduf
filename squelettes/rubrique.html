@@ -1,0 +1,34 @@
+[(#INCLURE{fond=debut_page})]
+
+    <div id="contenu">
+     <BOUCLE_rubrique(RUBRIQUES){id_rubrique}>
+       <div class="titre"><h1>#TITRE</h1></div>
+           <div class = "detail_rubrique">
+             <p>#DESCRIPTIF</p>
+             <p>#TEXTE</p>
+           </div>
+           <B_sous_rubriques>
+           <BOUCLE_sous_rubriques(RUBRIQUES){id_parent}{par titre}{tout}>
+             <div class = "resume_rubrique">
+               <a href="#URL_RUBRIQUE"><h1>#TITRE</h1></a>
+               <p>#DESCRIPTIF<p>
+             </div>  
+           </BOUCLE_sous_rubriques>
+           </B_sous_rubriques>
+          <B_articles>
+           <BOUCLE_articles(ARTICLES){id_rubrique}{par date}{inverse}>
+             <div class = "resume_article">
+               <a href="#URL_ARTICLE"><h1>#TITRE</h1></a>
+               <h2>par 
+                   <BOUCLE_last(AUTEURS){id_article}{0,1}>#NOM</BOUCLE_last>
+                   le [(#DATE|affdate{"j/n/Y à H:i"})] </h2> 
+               #CHAPO
+               <h3><a href="#URL_ARTICLE">Clique ici pour la suite</a></h3>
+             </div>  
+           </BOUCLE_articles>
+           </B_articles>
+     </BOUCLE_rubrique>            
+
+    </div>
+
+[(#INCLURE{fond=fin_page})]

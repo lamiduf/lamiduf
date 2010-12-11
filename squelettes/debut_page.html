@@ -1,0 +1,33 @@
+<title>[#NOM_SITE_SPIP] </title>
+    
+    <meta http-equiv="Content-Type" content="text/html; charset="#CHARSET" />
+    <link rel="stylesheet" href="#DOSSIER_SQUELETTE/lamiduf.css" type="text/css">
+    <script type="text/javascript" src="#DOSSIER_SQUELETTE/lamiduf.js"></script>
+
+</head>
+
+<body>
+
+  <div id="conteneur">
+
+    <div id="entete">
+      <div id="header_gauche"><img src = "#DOSSIER_SQUELETTE/logo_amis_150.jpg" ></div>
+      <div id="header_droite"><img src = "#DOSSIER_SQUELETTE/logo_amis_150.jpg" ></div>
+      <div id="header_centre"><img src= "#DOSSIER_SQUELETTE/banniere3.gif"></div>
+    </div>
+    
+    <div id="menu">
+      <ul>
+        <li><a href="spip.php">Les news</a></li>
+        <BOUCLE_menu(RUBRIQUES) {racine}{tout}>
+          <li><a href="#URL_RUBRIQUE">#TITRE</a>       
+            <ul>
+              <BOUCLE_sous_menu(RUBRIQUES) {id_parent} {par titre}{tout}>
+                  <li><a href="#URL_RUBRIQUE">#TITRE</a></li>
+              </BOUCLE_sous_menu>
+            </ul>
+          </li>
+        </BOUCLE_menu>
+      </ul>
+    </div>
+

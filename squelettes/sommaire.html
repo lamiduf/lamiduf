@@ -1,0 +1,17 @@
+[(#INCLURE{fond=debut_page})]
+
+    <div id="contenu">
+      <div class="titre"><h1>Les News</h1></div>
+      <BOUCLE_article1(ARTICLES){tout}{par date}{inverse}{0,5}>
+      <div class = "resume_article">
+        <a href="#URL_ARTICLE"><h1>#TITRE</h1></a>
+                <h2>par 
+                    <BOUCLE_last(AUTEURS){id_article}{0,1}>#NOM</BOUCLE_last>
+                    le [(#DATE|affdate{"j/n/Y à H:i"})] </h2> 
+        <p>#CHAPO</p>
+        <h3><a href="#URL_ARTICLE">Clique ici pour la suite</a></h3>
+      </div>  
+      </BOUCLE_article1>
+    </div>
+
+[(#INCLURE{fond=fin_page})]
